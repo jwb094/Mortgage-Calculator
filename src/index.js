@@ -87,7 +87,24 @@ function Elements(props){
                 // this.setState({
                 //     years:this.state.years * 12
                 // });
+                let promise = new Promise(function(resolve, reject) {
+                    // executor (the producing code, "singer")
+                    var ratepyear = this.state.rate / 12;
+                    var ratepyear = ratepyear + 1;
+                    resolve(ratepyear);
+                  });
+                  promise.then(function(value) {
+                        console.log(value);
+                  });
+                  /*
+                  let promise = new Promise(function(resolve, reject) {
+                    
 
+                  })
+                  .then( result =>{
+
+                  });
+                  */
                 //step 4
                 //var rates = Math.pow(ratepyear,-180) ;
                 // this.setState({
