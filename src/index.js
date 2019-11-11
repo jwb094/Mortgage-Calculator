@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 function Elements(props){
-    console.log(props);
+  //  console.log(props);
         return (   
             <div class="row">
 
@@ -49,10 +49,10 @@ function Elements(props){
         constructor(props) {
             super(props);
             this.state = {
-                amount : '',
-                rate : '',
-                years : '',
-                RateP_months:'',
+                amount : 0,
+                rate : 0,
+                years : 0,
+                RateP_months:0,
                  message:''
             };
             
@@ -73,70 +73,49 @@ function Elements(props){
                     years:document.getElementById('years').value
                 });*/
                 //console.log(this.state.rate);
-                this.setState({
-                    RateP_months:this.state.rate / 12
-                });
+               
+                //step 1 & 2
+                var ratepyear = this.state.rate / 12;
+                var ratepyear = ratepyear + 1;
+                console.log(ratepyear);
+                // this.setState({
+                //     RateP_months:(this.state.rate / 12) + 1
+                // });
+                //step 3
+                var years_in_month = this.state.years * 12;
+                console.log(years_in_month);
+                // this.setState({
+                //     years:this.state.years * 12
+                // });
+
+                //step 4
+                //var rates = Math.pow(ratepyear,-180) ;
+                // this.setState({
+                //     RateP_months:Math.pow(this.state.RateP_months,-180)
+                // });
                 //this.state.interest_RateP_months =  Math.floor(this.state.rate / 12);
                 
                 //Math.round();
                // console.log(this.state.interest_RateP_months);
                 //this.state.interest_RateP_months =  this.state.interest_RateP_months + 1;
                
-                console.log(this.state.RateP_months);
-                
-            //     //convert to  units to metric
-            //     if (hoption === 'Inches') {
-            //        //this.state.height = (this.state.height * 2.54) / 100;
-            //         this.setState({
-            //             height:(this.state.height * 2.54) / 100
-            //         });
-            //     }
-            //     if (woption === "Ibs") {
-            //        // this.state.weight = this.state.weight / 2.2046;
-            //         this.setState({
-            //             weight:this.state.weight / 2.2046
-            //         });
-            //     }
-            //     console.log(this.state.height);
-            //     console.log(this.state.weight);
-      
-                
-            //    // this.state.result = this.state.weight / (Math.pow(this.state.height,2));
-            //     this.setState({
-            //         result:this.state.weight / (Math.pow(this.state.height,2))
-            //     });
-            //     //this.state.result = Math.round(this.state.weight / Math.pow(this.state.height, 2) * 10000);
-            //     console.log(this.state.result);
-               
-            //     if (this.state.result <= 18.5) {
-            //         //this.state.message = 'Underweight';
-            //         this.setState({
-            //             message:'Underweight'
-            //         });
-            //     }  if (this.state.result >= 18.5 ) {
-            //        // this.state.message = 'Normal';
-            //         this.setState({
-            //             message:'Normal'
-            //         });
-            //     }  if (this.state.result >= 25) {
-            //         //this.state.message = 'Obese';
-            //         this.setState({
-            //             message:'Obese'
-            //         });
-            //     } if (this.state.result > 30) {
-            //         //this.state.message = 'Overweight';
-            //         this.setState({
-            //             message:'Overweight'
-            //         });
-            //     }
-             
+                //console.log(ratepyear);
+                //console.log(years_in_month);
+                //console.log(rates);
 
+                // var showOff = function (phone) {
+                //     return new Promise(
+                //         function (resolve, reject) {
+                //             var message = 'Hey friend, I have a new ' +
+                //                 phone.color + ' ' + phone.brand + ' phone';
+                
+                //             resolve(message);
+                //         }
+                //     );
+                // };
             }
 
-            reset(){
-                document.getElementById('weight').value  = "";
-                document.getElementById('height').value  = "";;
-    }
+
 
         //NEED TO FIX UP FRONTEND VIEW
             
