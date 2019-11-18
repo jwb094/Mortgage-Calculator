@@ -75,32 +75,52 @@ function Elements(props){
                 //console.log(this.state.rate);
                 this.state.rate  = this.state.rate * 0.01;
                 //step 1 & 2
-                var value = this.state.rate / 12;
-                var ratepyear = this.state.rate / 12;
-                var ratepyear = ratepyear + 1;
-                console.log(ratepyear);
+                var month_rate = this.state.rate/12;
+                var monthlyrate = this.state.rate/12;
+                var monthlyrate = monthlyrate +1;
+                //var ratepyear = this.state.rate / 12;
+                //var ratepyear = ratepyear + 1;
+                console.log(monthlyrate);
+                console.log(month_rate);
+                //step 3
+                let term  = this.state.years * 12;
+                console.log(term);
+                //step 4
+                var factor = Math.pow(monthlyrate,-term);
+                console.log(factor); 
+
+                //step 5
+                var denominator = 1  - factor ;
+                console.log(denominator); 
+                //step 6 
+                var step6 = month_rate/denominator;
+
+                var monthly_payment = this.state.amount * step6;
+                console.log(monthly_payment);
+                
+                var monthly_payment = monthly_payment.toFixed(2);
                 // this.setState({
                 //     RateP_months:(this.state.rate / 12) + 1
                 // });
                 //step 3
-                var years_in_month = this.state.years * 12;
+                //var years_in_month = this.state.years * 12;
                 //console.log(years_in_month);
 
                 //step 4
-                var years_of_payment_in_month = Math.pow(ratepyear, -years_in_month);
+               // var years_of_payment_in_month = Math.pow(ratepyear, -years_in_month);
                 //console.log(years_of_payment_in_month);
 
 
                 //step 5
-                var years_of_payment_in_month = years_of_payment_in_month - 1;
+                //var years_of_payment_in_month = years_of_payment_in_month - 1;
                 
                 
                 //step 6
-                var years_of_payment_in_month = years_of_payment_in_month / value; 
+              //  var years_of_payment_in_month = years_of_payment_in_month / value; 
 
                 //step 7
-                var monthly_payment = Math.round(this.state.amount * years_of_payment_in_month); 
-                console.log(monthly_payment);
+               // var monthly_payment = Math.round(this.state.amount * years_of_payment_in_month); 
+               // console.log(monthly_payment);
                 // this.setState({ 
                 //     years:this.state.years * 12
                 // });
