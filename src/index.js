@@ -73,8 +73,9 @@ function Elements(props){
                     years:document.getElementById('years').value
                 });*/
                 //console.log(this.state.rate);
-               
+                this.state.rate  = this.state.rate * 0.01;
                 //step 1 & 2
+                var value = this.state.rate / 12;
                 var ratepyear = this.state.rate / 12;
                 var ratepyear = ratepyear + 1;
                 console.log(ratepyear);
@@ -83,19 +84,27 @@ function Elements(props){
                 // });
                 //step 3
                 var years_in_month = this.state.years * 12;
-                console.log(years_in_month);
-                // this.setState({
+                //console.log(years_in_month);
+
+                //step 4
+                var years_of_payment_in_month = Math.pow(ratepyear, -years_in_month);
+                //console.log(years_of_payment_in_month);
+
+
+                //step 5
+                var years_of_payment_in_month = years_of_payment_in_month - 1;
+                
+                
+                //step 6
+                var years_of_payment_in_month = years_of_payment_in_month / value; 
+
+                //step 7
+                var monthly_payment = Math.round(this.state.amount * years_of_payment_in_month); 
+                console.log(monthly_payment);
+                // this.setState({ 
                 //     years:this.state.years * 12
                 // });
-                let promise = new Promise(function(resolve, reject) {
-                    // executor (the producing code, "singer")
-                    var ratepyear = this.state.rate / 12;
-                    var ratepyear = ratepyear + 1;
-                    resolve(ratepyear);
-                  });
-                  promise.then(function(value) {
-                        console.log(value);
-                  });
+              
                   /*
                   let promise = new Promise(function(resolve, reject) {
                     
