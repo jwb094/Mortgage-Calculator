@@ -19,7 +19,7 @@ function Elements(props){
                     <div class="card-body col-md-12">
                     <label>Mortagage Amount</label> 
                         <input type="text" class="form-control col-md-6" id="amount" ></input>
-                  
+
                     </div>
                     <div class="card-body col-md-12">
                     <label>Interest Rate</label> 
@@ -97,71 +97,24 @@ function Elements(props){
 
                 var monthly_payment = this.state.amount * step6;
                 console.log(monthly_payment);
-                
+                 //step 7
                 var monthly_payment = monthly_payment.toFixed(2);
+                console.log(monthly_payment);
                 // this.setState({
                 //     RateP_months:(this.state.rate / 12) + 1
                 // });
-                //step 3
-                //var years_in_month = this.state.years * 12;
-                //console.log(years_in_month);
 
-                //step 4
-               // var years_of_payment_in_month = Math.pow(ratepyear, -years_in_month);
-                //console.log(years_of_payment_in_month);
-
-
-                //step 5
-                //var years_of_payment_in_month = years_of_payment_in_month - 1;
-                
-                
-                //step 6
-              //  var years_of_payment_in_month = years_of_payment_in_month / value; 
-
-                //step 7
-               // var monthly_payment = Math.round(this.state.amount * years_of_payment_in_month); 
-               // console.log(monthly_payment);
-                // this.setState({ 
-                //     years:this.state.years * 12
-                // });
-              
-                  /*
-                  let promise = new Promise(function(resolve, reject) {
-                    
-
-                  })
-                  .then( result =>{
-
-                  });
-                  */
-                //step 4
-                //var rates = Math.pow(ratepyear,-180) ;
-                // this.setState({
-                //     RateP_months:Math.pow(this.state.RateP_months,-180)
-                // });
-                //this.state.interest_RateP_months =  Math.floor(this.state.rate / 12);
-                
-                //Math.round();
-               // console.log(this.state.interest_RateP_months);
-                //this.state.interest_RateP_months =  this.state.interest_RateP_months + 1;
-               
-                //console.log(ratepyear);
-                //console.log(years_in_month);
-                //console.log(rates);
-
-                // var showOff = function (phone) {
-                //     return new Promise(
-                //         function (resolve, reject) {
-                //             var message = 'Hey friend, I have a new ' +
-                //                 phone.color + ' ' + phone.brand + ' phone';
-                
-                //             resolve(message);
-                //         }
-                //     );
-                // };
+                this.setState({
+                    message:'Your Monthly payment is £' + monthly_payment
+                });
+       
             }
 
-
+            reset(){
+                document.getElementById('amount').value  = "";
+                document.getElementById('rate').value  = "";
+                document.getElementById('ratyearse').value  = "";
+            }
 
         //NEED TO FIX UP FRONTEND VIEW
             
