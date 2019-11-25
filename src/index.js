@@ -67,17 +67,17 @@ function Elements(props){
                 });
                /* this.setState({
                     rate:document.getElementById('rate').value
-                });
-                this.setState({
-                
-                    years:document.getElementById('years').value
                 });*/
+                // this.setState({
+                
+                //     rate:this.state.rate * 0.01
+                // });
                 //console.log(this.state.rate);
-                this.state.rate  = this.state.rate * 0.01;
+              this.state.rate  = this.state.rate * 0.01;
                 //step 1 & 2
                 var month_rate = this.state.rate/12;
-                var monthlyrate = this.state.rate/12;
-                var monthlyrate = monthlyrate +1;
+                var monthlyrate = (this.state.rate / 12) + 1;
+              //  var monthlyrate = monthlyrate +1;
                 //var ratepyear = this.state.rate / 12;
                 //var ratepyear = ratepyear + 1;
                 console.log(monthlyrate);
@@ -94,18 +94,18 @@ function Elements(props){
                 console.log(denominator); 
                 //step 6 
                 var step6 = month_rate/denominator;
-
+                console.log(step6);
                 var monthly_payment = this.state.amount * step6;
                 console.log(monthly_payment);
                  //step 7
-                var monthly_payment = monthly_payment.toFixed(2);
-                console.log(monthly_payment);
+                var monthly_payment_final = monthly_payment.toFixed(2);
+                console.log(monthly_payment_final);
                 // this.setState({
                 //     RateP_months:(this.state.rate / 12) + 1
                 // });
 
                 this.setState({
-                    message:'Your Monthly payment is £' + monthly_payment
+                    message:'Your Monthly payment is £' + monthly_payment_final
                 });
        
             }
@@ -113,7 +113,7 @@ function Elements(props){
             reset(){
                 document.getElementById('amount').value  = "";
                 document.getElementById('rate').value  = "";
-                document.getElementById('ratyearse').value  = "";
+                document.getElementById('years').value  = "";
             }
 
         //NEED TO FIX UP FRONTEND VIEW
